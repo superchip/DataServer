@@ -22,13 +22,15 @@ int main()
 
 	TCPDataServer server = TCPDataServer(11222,cb);
 	
-	Sleep(5000);
+	// Uncomment if you want to see how getting data from server queue works
 
-	char* m = server.dequeueIncomingData();
-	printf("Dequeue data result: [%s]\n",m);
+	//Sleep(10000);
 
-	char* m1 = server.dequeueIncomingData();
-	printf("Dequeue new data result: [%s]\n",m1);
+	//char* m = server.dequeueIncomingData();
+	//printf("Dequeue data result: [%s]\n",m);
+
+	//char* m1 = server.dequeueIncomingData();
+	//printf("Dequeue new data result: [%s]\n",m1);
 
 	// Wait here
 	getchar();
