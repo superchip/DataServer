@@ -5,3 +5,5 @@ Example usage in main.cpp
 
 Please also find TcpClient project for emulating client connections
 
+![Data Server Class Diagram](https://github.com/superchip/DataServer/blob/master/ClassDiagram.png)
+
