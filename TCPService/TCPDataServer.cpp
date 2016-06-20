@@ -14,6 +14,7 @@ TCPDataServer::TCPDataServer(int port, CallbackInterface* callBack) : TcpServer(
 
 TCPDataServer::~TCPDataServer()
 {
+	std::lock_guard<std::mutex> guard(m_mutex);
 	while(m_messageQueue.size() != 0)
 	{
 		delete [] m_messageQueue.front();
@@ -74,6 +75,8 @@ void TCPDataServer::processData(char* data)
 		if(data[i] == '~')
 			data[i] = '\0';
 	}
+
+	std::lock_guard<std::mutex> guard(m_mutex);
 
 	// Enqueue data
 	m_messageQueue.push(data);
